@@ -89,7 +89,7 @@ for episode in range(EPISODES):
 
     if episode % SHOW_EVERY == 0:
         print(f"on # {episode}, epsilon: {epsilon}")
-        print(f"{SHOW_EVERY} ep mean {np.mean(episode_rewards[-SHOW_EVERY])}")
+        print(f"{SHOW_EVERY} ep mean {np.mean(episode_rewards[-SHOW_EVERY:])}")
         show = True
     else:
         show = False
