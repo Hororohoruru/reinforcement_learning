@@ -100,7 +100,7 @@ for episode in range(EPISODES):
         if np.random.random() > epsilon:
             action = np.argmax(q_table[obs])
         else:
-            action = np.random.rand(0, 4)
+            action = np.random.randint(0, 4)
 
         player.action(action)
 
@@ -135,7 +135,7 @@ for episode in range(EPISODES):
             env[enemy.y][enemy.x] = colors['enemy']
 
             img = Image.fromarray(env, "RGB")
-            img = img.resie((300, 300))
+            img = img.resize((300, 300))
             cv2.imshow("test", np.array(img))
             if reward == FOOD_REWARD or reward == -ENEMY_PENALTY:
                 if cv2.waitKey(500) & 0xFF == ord("q"):
